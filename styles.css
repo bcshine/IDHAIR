@@ -954,24 +954,33 @@ body {
     
     /* 푸터 정보 그리드 모바일 스타일 */
     .footer-info-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2개의 열로 변경합니다 */
-        gap: 20px; /* 간격을 20px로 줄입니다 */
+        grid-template-columns: 1fr !important; /* 1개의 열로 변경합니다 (세로 배치) */
+        gap: 15px; /* 간격을 15px로 줄입니다 */
+        max-width: 100%; /* 최대 너비를 100%로 설정합니다 */
     }
     
     /* 푸터 정보 항목 모바일 스타일 */
     .footer-info-item {
-        padding: 15px; /* 안쪽 여백을 15px로 줄입니다 */
+        padding: 20px 15px; /* 위아래 여백을 늘리고 좌우 여백은 15px로 설정합니다 */
+        background-color: rgba(255, 255, 255, 0.05); /* 약간의 배경색을 추가합니다 */
+        border-radius: 8px; /* 모서리를 둥글게 만듭니다 */
+        border-left: 3px solid #3498db; /* 왼쪽에 파란색 강조선을 추가합니다 */
     }
     
     /* 정보 라벨 모바일 스타일 */
     .info-label {
-        font-size: 0.8rem; /* 모바일에서는 글자 크기를 줄입니다 */
-        margin-bottom: 6px; /* 아래쪽 여백을 6px로 줄입니다 */
+        font-size: 0.85rem; /* 모바일에서 읽기 좋은 크기로 조정합니다 */
+        margin-bottom: 8px; /* 아래쪽 여백을 8px로 늘립니다 */
+        color: #bdc3c7; /* 라벨 색상을 밝은 회색으로 설정합니다 */
+        font-weight: 600; /* 글자를 조금 더 굵게 만듭니다 */
     }
     
     /* 정보 값 모바일 스타일 */
     .info-value {
-        font-size: 0.9rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        font-size: 0.95rem; /* 값은 라벨보다 조금 크게 설정합니다 */
+        line-height: 1.4; /* 줄 간격을 조정합니다 */
+        color: #ecf0f1; /* 밝은 색상으로 가독성을 높입니다 */
+        word-break: break-word; /* 긴 텍스트가 줄바꿈되도록 설정합니다 */
     }
     
     /* 전화번호 모바일 스타일 */
@@ -982,21 +991,31 @@ body {
     /* 푸터 하단 모바일 스타일 */
     .footer-bottom {
         flex-direction: column; /* 세로 방향으로 배치합니다 */
-        gap: 20px; /* 요소 사이 간격을 20px로 설정합니다 */
-        padding-top: 20px; /* 상단 패딩을 20px로 줄입니다 */
+        gap: 25px; /* 요소 사이 간격을 25px로 늘립니다 */
+        padding-top: 25px; /* 상단 패딩을 25px로 늘립니다 */
         text-align: center; /* 텍스트를 가운데 정렬합니다 */
+        margin-top: 20px; /* 위쪽 마진을 추가합니다 */
     }
     
     /* 소셜미디어 링크 모바일 스타일 */
     .social-link {
-        padding: 8px 12px; /* 안쪽 여백을 줄입니다 */
-        gap: 6px; /* 아이콘과 텍스트 사이 간격을 6px로 줄입니다 */
+        padding: 12px 16px; /* 안쪽 여백을 늘려서 터치하기 쉽게 만듭니다 */
+        gap: 8px; /* 아이콘과 텍스트 사이 간격을 8px로 늘립니다 */
+        font-size: 0.9rem; /* 글자 크기를 적절히 조정합니다 */
+        border-radius: 25px; /* 모서리를 더 둥글게 만듭니다 */
     }
     
     /* 인스타그램 아이콘 모바일 스타일 */
     .instagram-icon {
-        width: 18px; /* 아이콘 너비를 18px로 줄입니다 */
-        height: 18px; /* 아이콘 높이를 18px로 줄입니다 */
+        width: 20px; /* 아이콘 너비를 20px로 늘립니다 */
+        height: 20px; /* 아이콘 높이를 20px로 늘립니다 */
+    }
+    
+    /* 저작권 텍스트 모바일 스타일 */
+    .copyright p {
+        font-size: 0.8rem; /* 모바일에서 적절한 크기로 설정합니다 */
+        line-height: 1.4; /* 줄 간격을 조정합니다 */
+        color: #95a5a6; /* 색상을 조금 더 밝게 설정합니다 */
     }
     
     /* 소셜미디어 텍스트 모바일 스타일 */
@@ -1917,4 +1936,79 @@ body {
 .external-icon {
     font-size: 1rem; /* 아이콘 크기를 1rem으로 설정합니다 */
     opacity: 0.8; /* 투명도를 0.8로 설정합니다 */
+}
+
+/* === 푸터 초소형 화면 추가 최적화 (480px 이하) === */
+@media (max-width: 480px) {
+    /* 푸터 섹션 초소형 화면 스타일 */
+    .footer-section {
+        padding: 40px 0 20px 0; /* 위아래 패딩을 더 줄입니다 */
+    }
+    
+    /* 푸터 링크들 초소형 화면 스타일 */
+    .footer-links {
+        flex-direction: column; /* 세로 방향으로 배치합니다 */
+        gap: 10px; /* 링크 사이 간격을 10px로 줄입니다 */
+    }
+    
+    /* 푸터 링크 초소형 화면 스타일 */
+    .footer-link {
+        font-size: 0.8rem; /* 글자 크기를 더 줄입니다 */
+        padding: 8px 0; /* 위아래 패딩을 추가합니다 */
+    }
+    
+    /* 푸터 정보 그리드 초소형 화면 스타일 */
+    .footer-info-grid {
+        gap: 12px; /* 간격을 더 줄입니다 */
+    }
+    
+    /* 푸터 정보 항목 초소형 화면 스타일 */
+    .footer-info-item {
+        padding: 18px 12px; /* 패딩을 더 줄입니다 */
+        border-radius: 6px; /* 모서리를 더 줄입니다 */
+        border-left-width: 2px; /* 강조선 두께를 줄입니다 */
+    }
+    
+    /* 정보 라벨 초소형 화면 스타일 */
+    .info-label {
+        font-size: 0.8rem; /* 글자 크기를 더 줄입니다 */
+        margin-bottom: 6px; /* 아래쪽 여백을 줄입니다 */
+    }
+    
+    /* 정보 값 초소형 화면 스타일 */
+    .info-value {
+        font-size: 0.9rem; /* 글자 크기를 더 줄입니다 */
+        line-height: 1.3; /* 줄 간격을 줄입니다 */
+    }
+    
+    /* 전화번호 초소형 화면 스타일 */
+    .phone-number {
+        font-size: 0.95rem; /* 전화번호 크기를 적절히 조정합니다 */
+    }
+    
+    /* 푸터 하단 영역 초소형 화면 스타일 */
+    .footer-bottom {
+        gap: 20px; /* 요소 사이 간격을 줄입니다 */
+        padding-top: 20px; /* 상단 패딩을 줄입니다 */
+        margin-top: 15px; /* 위쪽 마진을 줄입니다 */
+    }
+    
+    /* 소셜미디어 링크 초소형 화면 스타일 */
+    .social-link {
+        padding: 10px 14px; /* 패딩을 줄입니다 */
+        font-size: 0.85rem; /* 글자 크기를 더 줄입니다 */
+        gap: 6px; /* 간격을 줄입니다 */
+    }
+    
+    /* 인스타그램 아이콘 초소형 화면 스타일 */
+    .instagram-icon {
+        width: 18px; /* 아이콘 크기를 줄입니다 */
+        height: 18px; /* 아이콘 크기를 줄입니다 */
+    }
+    
+    /* 저작권 텍스트 초소형 화면 스타일 */
+    .copyright p {
+        font-size: 0.75rem; /* 글자 크기를 더 줄입니다 */
+        line-height: 1.3; /* 줄 간격을 줄입니다 */
+    }
 }
