@@ -657,8 +657,8 @@ body {
     transform: translateY(-3px); /* 버튼을 위로 3px 이동시킵니다 */
 }
 
-/* 반응형 디자인: 화면 너비가 768px 이하일 때 적용되는 스타일 */
-@media (max-width: 768px) {
+/* 반응형 디자인: 화면 너비가 1200px 이하일 때 적용되는 스타일 (태블릿, 모바일 최적화) */
+@media (max-width: 1200px) {
     /* 헤더 스타일 조정 */
     .header {
         padding: 15px; /* 안쪽 여백을 줄입니다 */
@@ -1024,7 +1024,7 @@ body {
     
     /* 오시는 길 내용 컨테이너 모바일 스타일 */
     .directions-content {
-        grid-template-columns: 1fr; /* 1개의 열로 변경합니다 (세로 배치) */
+        grid-template-columns: 1fr !important; /* 1개의 열로 확실히 변경합니다 (세로 배치) */
         gap: 30px; /* 간격을 30px로 줄입니다 */
         margin-bottom: 40px; /* 아래쪽 여백을 40px로 줄입니다 */
     }
@@ -1082,7 +1082,7 @@ body {
         padding: 25px; /* 안쪽 여백을 25px로 줄입니다 */
         margin-bottom: 30px; /* 아래쪽 여백을 30px로 줄입니다 */
         border-radius: 15px; /* 모서리를 15px로 줄입니다 */
-        grid-template-columns: 1fr; /* 1개의 열로 변경합니다 (세로 배치) */
+        grid-template-columns: 1fr !important; /* 1개의 열로 확실히 변경합니다 (세로 배치) */
         gap: 20px; /* 간격을 20px로 줄입니다 */
     }
     
