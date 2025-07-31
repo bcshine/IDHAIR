@@ -1,0 +1,1920 @@
+/* 전체 페이지에 기본 스타일 적용 */
+* {
+    margin: 0; /* 모든 요소의 바깥 여백을 0으로 설정합니다 */
+    padding: 0; /* 모든 요소의 안쪽 여백을 0으로 설정합니다 */
+    box-sizing: border-box; /* 요소의 크기 계산 방식을 테두리를 포함하는 방식으로 설정합니다 */
+}
+
+/* 기본 폰트 설정 */
+body {
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨 메이플스토리 폰트를 기본으로 설정합니다 */
+    background-color: #f8f8f8; /* 페이지 배경색을 연한 회색으로 설정합니다 */
+}
+
+/* 헤더 스타일 */
+.header {
+    display: flex; /* 가로로 나란히 배치하기 위해 flex 설정합니다 */
+    align-items: center; /* 세로 방향으로 가운데 정렬합니다 */
+    justify-content: space-between; /* 양쪽 끝과 가운데로 배치합니다 */
+    padding: 15px 30px; /* 위아래 15px, 좌우 30px의 안쪽 여백을 줍니다 */
+    background-color: white; /* 배경색을 흰색으로 설정합니다 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 헤더 아래에 그림자 효과를 줍니다 */
+    position: sticky; /* 스크롤해도 헤더가 상단에 고정되도록 합니다 */
+    top: 0; /* 상단에 붙습니다 */
+    z-index: 1000; /* 다른 요소보다 앞에 표시되도록 합니다 */
+    gap: 10px; /* 요소 사이의 간격을 10px로 설정합니다 */
+}
+
+/* 로고 컨테이너 스타일 */
+.logo-container {
+    display: flex; /* 내부 요소를 flex로 배치합니다 */
+    align-items: center; /* 세로 방향으로 가운데 정렬합니다 */
+    flex: 1; /* 가능한 공간을 차지합니다 */
+}
+
+/* 브랜드 컨테이너 스타일 */
+.brand-container {
+    display: flex; /* 내부 요소를 flex로 배치합니다 */
+    justify-content: center; /* 가로 방향으로 가운데 정렬합니다 */
+    align-items: center; /* 세로 방향으로 가운데 정렬합니다 */
+    flex: 2; /* 로고와 네비게이션보다 더 많은 공간을 차지합니다 */
+}
+
+/* 로고 이미지 스타일 */
+.logo {
+    width: 50px; /* 로고의 너비를 50px로 설정합니다 */
+    height: auto; /* 높이는 비율에 맞게 자동 조정됩니다 */
+}
+
+/* 브랜드 이름 스타일 */
+.brand-name {
+    font-size: 1.5rem; /* 글자 크기를 1.5rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 표시합니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    text-align: center; /* 텍스트를 중앙으로 정렬합니다 */
+}
+
+/* 헤더 네비게이션 영역 스타일 */
+.header-nav {
+    display: flex; /* 내부 요소를 flex로 배치합니다 */
+    justify-content: flex-end; /* 오른쪽 정렬합니다 */
+    align-items: center; /* 세로 방향으로 가운데 정렬합니다 */
+    flex: 1; /* 가능한 공간을 차지합니다 */
+}
+
+/* 네비게이션 메뉴 스타일 */
+.nav-menu {
+    display: flex; /* 메뉴 항목을 가로로 배치합니다 */
+    list-style: none; /* 목록 기호를 제거합니다 */
+    gap: 20px; /* 메뉴 항목 사이 간격을 20px로 설정합니다 */
+}
+
+/* 메뉴 항목 스타일 */
+.nav-menu li a {
+    text-decoration: none; /* 링크의 밑줄을 제거합니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    font-weight: 500; /* 글자 두께를 중간으로 설정합니다 */
+    padding: 5px 10px; /* 위아래 5px, 좌우 10px의 안쪽 여백을 줍니다 */
+    border-radius: 4px; /* 모서리를 둥글게 만듭니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초의 부드러운 전환 효과를 줍니다 */
+}
+
+/* 메뉴 항목에 마우스를 올렸을 때 스타일 */
+.nav-menu li a:hover {
+    background-color: #f0f0f0; /* 배경색을 연한 회색으로 변경합니다 */
+    color: #000; /* 글자 색상을 검정색으로 변경합니다 */
+}
+
+/* 모바일 메뉴 버튼 스타일 (기본적으로 숨김) */
+.mobile-menu-btn {
+    display: none; /* 기본적으로 화면에 표시하지 않습니다 */
+    flex-direction: column; /* 햄버거 아이콘의 선을 세로로 배치합니다 */
+    justify-content: space-between; /* 선 사이에 균등한 간격을 줍니다 */
+    width: 30px; /* 버튼의 너비를 30px로 설정합니다 */
+    height: 20px; /* 버튼의 높이를 20px로 설정합니다 */
+    cursor: pointer; /* 마우스를 올렸을 때 커서를 포인터로 변경합니다 */
+}
+
+/* 햄버거 아이콘의 각 선 스타일 */
+.mobile-menu-btn span {
+    height: 3px; /* 선의 높이를 3px로 설정합니다 */
+    width: 100%; /* 선의 너비를 부모 요소의 100%로 설정합니다 */
+    background-color: #333; /* 선의 색상을 어두운 회색으로 설정합니다 */
+    border-radius: 3px; /* 선의 모서리를 둥글게 만듭니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초의 부드러운 전환 효과를 줍니다 */
+}
+
+/* 히어로 섹션 스타일 (좌우로 꽉 차게) */
+.hero-section {
+    position: relative; /* 자식 요소들의 위치 기준점이 됩니다 */
+    width: 100%; /* 너비를 화면 전체로 설정합니다 */
+    height: 80vh; /* 높이를 화면 높이의 80%로 설정합니다 */
+    overflow: hidden; /* 넘치는 내용을 숨깁니다 */
+}
+
+/* 슬라이더 컨테이너 스타일 */
+.slider-container {
+    position: relative; /* 자식 요소들의 위치 기준점이 됩니다 */
+    width: 100%; /* 너비를 부모 요소의 100%로 설정합니다 */
+    height: 100%; /* 높이를 부모 요소의 100%로 설정합니다 */
+}
+
+/* 슬라이드 스타일 */
+.slide {
+    position: absolute; /* 절대 위치로 설정합니다 */
+    top: 0; /* 상단에 배치합니다 */
+    left: 0; /* 왼쪽에 배치합니다 */
+    width: 100%; /* 너비를 부모 요소의 100%로 설정합니다 */
+    height: 100%; /* 높이를 부모 요소의 100%로 설정합니다 */
+    opacity: 0; /* 기본적으로 투명하게 설정합니다 */
+    transition: opacity 1s ease; /* 투명도 변화에 1초의 부드러운 전환 효과를 줍니다 */
+    display: flex; /* 내부 요소를 flex로 배치합니다 */
+    justify-content: center; /* 가로 방향으로 가운데 정렬합니다 */
+    align-items: center; /* 세로 방향으로 가운데 정렬합니다 */
+}
+
+/* 활성화된 슬라이드 스타일 */
+.slide.active {
+    opacity: 1; /* 활성화된 슬라이드는 완전히 보이게 합니다 */
+    z-index: 1; /* 다른 슬라이드보다 앞에 표시되도록 합니다 */
+}
+
+/* 슬라이드 이미지 스타일 (좌우로 꽉 차게) */
+.slide img {
+    position: absolute; /* 절대 위치로 설정합니다 */
+    top: 0; /* 상단에 배치합니다 */
+    left: 0; /* 왼쪽에 배치합니다 */
+    width: 100%; /* 너비를 부모 요소의 100%로 설정합니다 */
+    height: 100%; /* 높이를 부모 요소의 100%로 설정합니다 */
+    object-fit: cover; /* 이미지가 영역을 꽉 채우도록 설정합니다 */
+    z-index: -1; /* 텍스트보다 뒤에 표시되도록 합니다 */
+}
+
+/* 슬라이드 내용 스타일 (이미지 가운데에 배치) */
+.slide-content {
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    color: white; /* 글자 색상을 흰색으로 설정합니다 */
+    padding: 20px; /* 안쪽 여백을 20px로 설정합니다 */
+    max-width: 800px; /* 최대 너비를 800px로 제한합니다 */
+    z-index: 2; /* 이미지보다 앞에 표시되도록 합니다 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 글자가 배경과 대비되어 잘 보이게 그림자를 넣습니다 */
+}
+
+/* 브랜드 제목 스타일 (이미지에 알맞게 크게) */
+.brand-title {
+    font-size: 3.5rem; /* 글자 크기를 3.5rem으로 크게 설정합니다 */
+    margin-bottom: 20px; /* 아래 여백을 20px로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 표시합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 슬라이드 텍스트 스타일 (이미지에 알맞게 크게) */
+.slide-text {
+    font-size: 1.8rem; /* 글자 크기를 1.8rem으로 크게 설정합니다 */
+    line-height: 1.6; /* 줄 간격을 1.6배로 설정합니다 */
+    margin-bottom: 30px; /* 아래 여백을 30px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 예약하기 버튼 스타일 */
+.reservation-btn {
+    display: inline-block; /* 인라인 블록 요소로 설정합니다 */
+    padding: 15px 40px; /* 위아래 15px, 좌우 40px의 안쪽 여백을 줍니다 */
+    background-color: #ff6b6b; /* 배경색을 분홍색으로 설정합니다 */
+    color: white; /* 글자 색상을 흰색으로 설정합니다 */
+    text-decoration: none; /* 링크의 밑줄을 제거합니다 */
+    border-radius: 30px; /* 모서리를 둥글게 만듭니다 */
+    font-size: 1.3rem; /* 글자 크기를 1.3rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 표시합니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초의 부드러운 전환 효과를 줍니다 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 버튼에 그림자 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 예약하기 버튼에 마우스를 올렸을 때 스타일 */
+.reservation-btn:hover {
+    background-color: #ff5252; /* 배경색을 더 진한 분홍색으로 변경합니다 */
+    transform: translateY(-3px); /* 버튼을 위로 3px 이동시킵니다 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 그림자를 더 크게 만듭니다 */
+}
+
+/* 슬라이더 화살표 버튼 스타일 (좌우 끝, 세로 중앙에 배치, 흰색, 음영없음) */
+.slider-arrow {
+    position: absolute; /* 절대 위치로 설정합니다 */
+    top: 50%; /* 상단에서 50% 위치에 배치합니다 */
+    transform: translateY(-50%); /* 세로 방향으로 가운데 정렬합니다 */
+    width: 60px; /* 너비를 60px로 설정합니다 */
+    height: 60px; /* 높이를 60px로 설정합니다 */
+    background: transparent; /* 배경을 투명하게 설정합니다 */
+    border: none; /* 테두리를 제거합니다 */
+    color: white; /* 아이콘 색상을 흰색으로 설정합니다 */
+    font-size: 2.5rem; /* 아이콘 크기를 2.5rem으로 설정합니다 */
+    cursor: pointer; /* 마우스를 올렸을 때 커서를 포인터로 변경합니다 */
+    z-index: 10; /* 다른 요소보다 앞에 표시되도록 합니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초의 부드러운 전환 효과를 줍니다 */
+    border-radius: 50%; /* 원형으로 만듭니다 */
+    text-shadow: none; /* 음영을 제거합니다 */
+    opacity: 0.8; /* 약간 투명하게 설정합니다 */
+}
+
+/* 이전 화살표 버튼 위치 (좌우 끝) */
+.prev-arrow {
+    left: 30px; /* 왼쪽에서 30px 떨어진 위치에 배치합니다 */
+}
+
+/* 다음 화살표 버튼 위치 (좌우 끝) */
+.next-arrow {
+    right: 30px; /* 오른쪽에서 30px 떨어진 위치에 배치합니다 */
+}
+
+/* 화살표 버튼에 마우스를 올렸을 때 스타일 */
+.slider-arrow:hover {
+    opacity: 1; /* 완전히 불투명하게 만듭니다 */
+    transform: translateY(-50%) scale(1.1); /* 크기를 10% 증가시킵니다 */
+    background-color: rgba(255, 255, 255, 0.1); /* 아주 연한 흰색 배경을 추가합니다 */
+}
+
+/* 슬라이드 인디케이터 컨테이너 스타일 */
+.slide-indicators {
+    position: absolute; /* 절대 위치로 설정합니다 */
+    bottom: 30px; /* 하단에서 30px 떨어진 위치에 배치합니다 */
+    left: 50%; /* 왼쪽에서 50% 위치에 배치합니다 */
+    transform: translateX(-50%); /* 가로 방향으로 가운데 정렬합니다 */
+    display: flex; /* 인디케이터를 가로로 배치합니다 */
+    gap: 12px; /* 인디케이터 사이 간격을 12px로 설정합니다 */
+    z-index: 10; /* 다른 요소보다 앞에 표시되도록 합니다 */
+}
+
+/* 인디케이터 점 스타일 */
+.indicator {
+    width: 14px; /* 너비를 14px로 설정합니다 */
+    height: 14px; /* 높이를 14px로 설정합니다 */
+    border-radius: 50%; /* 원형으로 만듭니다 */
+    background-color: rgba(255, 255, 255, 0.5); /* 배경색을 반투명 흰색으로 설정합니다 */
+    cursor: pointer; /* 마우스를 올렸을 때 커서를 포인터로 변경합니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초의 부드러운 전환 효과를 줍니다 */
+}
+
+/* 활성화된 인디케이터 점 스타일 */
+.indicator.active {
+    background-color: white; /* 배경색을 흰색으로 설정합니다 */
+    transform: scale(1.3); /* 크기를 30% 증가시킵니다 */
+}
+
+/* 디자이너 섹션 스타일 */
+.designers-section {
+    padding: 80px 0; /* 위아래 80px 여백을 줍니다 */
+    background-color: #f9f9f9; /* 배경색을 연한 회색으로 설정합니다 */
+}
+
+/* 디자이너 섹션 컨테이너 스타일 */
+.designers-section .container {
+    max-width: 1200px; /* 최대 너비를 1200px로 제한합니다 */
+    margin: 0 auto; /* 가로 방향으로 중앙 정렬합니다 */
+    padding: 0 20px; /* 좌우 20px 여백을 줍니다 */
+}
+
+/* 제품 타이틀 스타일 (검은색 큰 글씨) */
+.product-title {
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    font-size: 2.5rem; /* 글자 크기를 2.5rem으로 설정합니다 */
+    margin-bottom: 50px; /* 아래 여백을 50px로 설정합니다 */
+    font-weight: 700; /* 글자를 굵게 표시합니다 */
+    color: #000; /* 글자 색상을 검정색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 디자이너 그리드 스타일 (4X2 형태로 고정 배치) */
+.designers-grid {
+    display: grid; /* 그리드 레이아웃을 사용합니다 */
+    grid-template-columns: repeat(4, 1fr); /* 4개의 동일한 크기 컬럼으로 고정 배치합니다 */
+    grid-template-rows: repeat(2, 1fr); /* 2개의 동일한 크기 행으로 배치합니다 */
+    gap: 3px; /* 그리드 아이템 사이의 간격을 3px로 설정합니다 */
+    max-width: 1200px; /* 최대 너비를 1200px로 제한합니다 */
+    margin: 0 auto; /* 가로 방향으로 중앙 정렬합니다 */
+}
+
+/* 디자이너 카드 스타일 */
+.designer-card {
+    background-color: #fff; /* 배경색을 흰색으로 설정합니다 */
+    border-radius: 8px; /* 모서리를 둥글게 만듭니다 */
+    overflow: hidden; /* 넘치는 내용을 숨깁니다 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 카드에 그림자 효과를 줍니다 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 변화에 부드러운 전환 효과를 줍니다 */
+    display: flex; /* 내부 요소를 flex로 배치합니다 */
+    flex-direction: column; /* 세로 방향으로 배치합니다 */
+}
+
+/* 디자이너 카드에 마우스를 올렸을 때 스타일 */
+.designer-card:hover {
+    transform: translateY(-3px); /* 카드를 위로 3px 이동시킵니다 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 그림자를 더 크게 만듭니다 */
+}
+
+/* 디자이너 이미지 컨테이너 스타일 */
+.designer-image {
+    width: 100%; /* 너비를 부모 요소의 100%로 설정합니다 */
+    height: 200px; /* 높이를 200px로 고정합니다 */
+    overflow: hidden; /* 넘치는 내용을 숨깁니다 */
+}
+
+/* 디자이너 이미지 스타일 */
+.designer-image img {
+    width: 100%; /* 너비를 부모 요소의 100%로 설정합니다 */
+    height: 100%; /* 높이를 부모 요소의 100%로 설정합니다 */
+    object-fit: cover; /* 이미지가 영역을 꽉 채우도록 설정합니다 */
+    transition: transform 0.5s ease; /* 변화에 부드러운 전환 효과를 줍니다 */
+}
+
+/* 디자이너 카드에 마우스를 올렸을 때 이미지 확대 효과 */
+.designer-card:hover .designer-image img {
+    transform: scale(1.05); /* 이미지를 5% 확대합니다 */
+}
+
+/* 디자이너 정보 스타일 */
+.designer-info {
+    padding: 15px; /* 안쪽 여백을 15px로 설정합니다 */
+    flex: 1; /* 남은 공간을 차지합니다 */
+    display: flex; /* 내부 요소를 flex로 배치합니다 */
+    flex-direction: column; /* 세로 방향으로 배치합니다 */
+}
+
+/* 디자이너 이름 스타일 */
+.designer-info h3 {
+    font-size: 1.2rem; /* 글자 크기를 1.2rem으로 설정합니다 */
+    margin-bottom: 8px; /* 아래 여백을 8px로 설정합니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다 */
+}
+
+/* 디자이너 설명 컨테이너 스타일 */
+.designer-description {
+    flex: 1; /* 남은 공간을 차지합니다 */
+    margin-bottom: 10px; /* 아래 여백을 10px로 설정합니다 */
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다 */
+}
+
+/* 디자이너 설명 문단 스타일 (3줄만 표시) */
+.designer-description p {
+    font-size: 0.85rem; /* 글자 크기를 0.85rem으로 설정합니다 */
+    line-height: 1.4; /* 줄 간격을 1.4배로 설정합니다 */
+    color: #666; /* 글자 색상을 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    margin: 0; /* 기본 여백을 제거합니다 */
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다 */
+}
+
+/* 3번째 줄 이후는 숨깁니다 */
+.designer-description p:nth-child(n+4) {
+    display: none; /* 4번째 문단부터는 숨깁니다 */
+}
+
+/* 더보기 버튼 스타일 (간단한 토글 버튼) */
+.toggle-btn {
+    background-color: #4a90e2; /* 배경색을 파란색으로 설정합니다 */
+    color: #fff; /* 글자 색상을 흰색으로 설정합니다 */
+    border: none; /* 테두리를 제거합니다 */
+    padding: 6px 15px; /* 위아래 6px, 좌우 15px의 안쪽 여백을 줍니다 */
+    border-radius: 20px; /* 모서리를 둥글게 만듭니다 */
+    cursor: pointer; /* 마우스를 올렸을 때 커서를 포인터로 변경합니다 */
+    font-size: 0.8rem; /* 글자 크기를 0.8rem으로 설정합니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초의 부드러운 전환 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 버튼에 그림자 효과를 줍니다 */
+    align-self: flex-start; /* 왼쪽 정렬을 위해 설정합니다 */
+}
+
+/* 더보기 버튼에 마우스를 올렸을 때 스타일 */
+.toggle-btn:hover {
+    background-color: #3a7bc8; /* 배경색을 더 진한 파란색으로 변경합니다 */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* 그림자를 더 크게 만듭니다 */
+    transform: translateY(-1px); /* 버튼을 위로 1px 이동시킵니다 */
+}
+
+/* 숨겨진 텍스트 스타일 */
+.full-text {
+    margin-top: 10px; /* 위쪽 여백을 10px로 설정합니다 */
+}
+
+/* 숨겨진 텍스트의 문단 스타일 */
+.full-text p {
+    font-size: 0.85rem; /* 글자 크기를 0.85rem으로 설정합니다 */
+    line-height: 1.4; /* 줄 간격을 1.4배로 설정합니다 */
+    color: #666; /* 글자 색상을 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    margin: 0; /* 기본 여백을 제거합니다 */
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다 */
+}
+
+/* === 고객 후기 섹션 스타일 === */
+
+/* 고객 후기 섹션 전체 스타일 */
+.review-section {
+    padding: 80px 0; /* 위아래 80px의 여백을 줍니다 */
+    background-color: #f8f9fa; /* 연한 회색 배경색을 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 고객 후기 제목 스타일 */
+.review-title {
+    font-size: 2.5rem; /* 글자 크기를 2.5rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    margin-bottom: 15px; /* 아래쪽 여백을 15px로 설정합니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 고객 후기 부제목 스타일 */
+.review-subtitle {
+    font-size: 1.1rem; /* 글자 크기를 1.1rem으로 설정합니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    margin-bottom: 50px; /* 아래쪽 여백을 50px로 설정합니다 */
+    color: #666; /* 글자 색상을 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 고객 후기 그리드 컨테이너 스타일 */
+.review-grid {
+    display: grid; /* CSS 그리드 레이아웃을 사용합니다 */
+    grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 너비 열을 만듭니다 */
+    gap: 30px; /* 각 카드 사이의 간격을 30px로 설정합니다 */
+    max-width: 1200px; /* 최대 너비를 1200px로 제한합니다 */
+    margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정합니다 */
+}
+
+/* 고객 후기 카드 스타일 */
+.review-card {
+    background-color: #fff; /* 배경색을 흰색으로 설정합니다 */
+    padding: 30px; /* 안쪽 여백을 30px로 설정합니다 */
+    border-radius: 15px; /* 모서리를 둥글게 만듭니다 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* 그림자 효과를 줍니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 변화에 부드러운 전환 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 고객 후기 카드에 마우스를 올렸을 때 스타일 */
+.review-card:hover {
+    transform: translateY(-5px); /* 카드를 위로 5px 이동시킵니다 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* 그림자를 더 크게 만듭니다 */
+}
+
+/* 고객 이름 스타일 */
+.customer-name {
+    font-size: 1.1rem; /* 글자 크기를 1.1rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    margin-bottom: 15px; /* 아래쪽 여백을 15px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 별점 평가 스타일 */
+.star-rating {
+    margin-bottom: 20px; /* 아래쪽 여백을 20px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 별 모양 스타일 */
+.star {
+    color: #ffd700; /* 별 색상을 금색으로 설정합니다 */
+    font-size: 1.3rem; /* 별 크기를 1.3rem으로 설정합니다 */
+    margin: 0 2px; /* 좌우 여백을 2px씩 줍니다 */
+}
+
+/* 후기 내용 스타일 */
+.review-content {
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 후기 내용의 문단 스타일 */
+.review-content p {
+    font-size: 0.95rem; /* 글자 크기를 0.95rem으로 설정합니다 */
+    line-height: 1.5; /* 줄 간격을 1.5배로 설정합니다 */
+    color: #555; /* 글자 색상을 중간 회색으로 설정합니다 */
+    margin: 8px 0; /* 위아래 여백을 8px로 설정합니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* === 브랜드 히스토리 섹션 스타일 === */
+
+/* 브랜드 히스토리 섹션 전체 스타일 */
+.brand-history-section {
+    padding: 80px 0; /* 위아래 80px의 여백을 줍니다 */
+    background-color: #fff; /* 배경색을 흰색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 브랜드 히스토리 제목 스타일 */
+.history-title {
+    font-size: 2.5rem; /* 글자 크기를 2.5rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    margin-bottom: 50px; /* 아래쪽 여백을 50px로 설정합니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 브랜드 히스토리 내용 컨테이너 스타일 */
+.history-content {
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    align-items: flex-start; /* 위쪽으로 정렬합니다 */
+    gap: 50px; /* 이미지와 텍스트 사이 간격을 50px로 설정합니다 */
+    max-width: 1200px; /* 최대 너비를 1200px로 제한합니다 */
+    margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정합니다 */
+    padding: 0 20px; /* 좌우 여백을 20px로 설정합니다 */
+}
+
+/* 브랜드 히스토리 이미지 스타일 */
+.history-image {
+    flex: 0 0 400px; /* 고정 너비 400px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 브랜드 히스토리 이미지 img 태그 스타일 */
+.history-image img {
+    width: 100%; /* 너비를 100%로 설정합니다 */
+    height: 500px; /* 높이를 500px로 설정합니다 */
+    border-radius: 20px; /* 모서리를 둥글게 만듭니다 */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* 그림자 효과를 줍니다 */
+    object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너에 맞춥니다 */
+}
+
+/* 브랜드 히스토리 텍스트 영역 스타일 */
+.history-text {
+    flex: 1; /* 남은 공간을 모두 차지합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    padding: 20px 0; /* 위아래 여백을 20px로 설정합니다 */
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    flex-direction: column; /* 세로 방향으로 배치합니다 */
+    justify-content: flex-start; /* 상단부터 배치합니다 */
+}
+
+/* 인사말 제목 스타일 */
+.greeting-title {
+    font-size: 2rem; /* 글자 크기를 2rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    margin-bottom: 35px; /* 아래쪽 여백을 35px로 설정합니다 */
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    line-height: 1.3; /* 줄 간격을 1.3배로 설정합니다 */
+}
+
+/* 브랜드 가치 내용 스타일 */
+.brand-values {
+    margin-bottom: 30px; /* 아래쪽 여백을 30px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    flex-grow: 1; /* 남은 공간을 차지합니다 */
+}
+
+/* 브랜드 가치 문단 스타일 */
+.brand-values p {
+    font-size: 1.1rem; /* 글자 크기를 1.1rem으로 설정합니다 */
+    line-height: 1.7; /* 줄 간격을 1.7배로 설정합니다 */
+    color: #555; /* 글자 색상을 중간 회색으로 설정합니다 */
+    margin: 10px 0; /* 위아래 여백을 10px로 설정합니다 */
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 강조된 제목 스타일 */
+.brand-values p strong {
+    color: #4a90e2; /* 강조 텍스트를 파란색으로 설정합니다 */
+    font-size: 1.15rem; /* 강조 텍스트를 조금 더 크게 설정합니다 */
+}
+
+/* 숨겨진 브랜드 가치 내용 스타일 */
+.full-values {
+    margin-top: 20px; /* 위쪽 여백을 20px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 서명 스타일 */
+.signature {
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    margin-top: 30px; /* 위쪽 여백을 30px로 설정합니다 */
+    font-style: italic; /* 글자를 기울임체로 만듭니다 */
+    color: #666; /* 글자 색상을 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    font-size: 1.05rem; /* 글자 크기를 1.05rem으로 설정합니다 */
+}
+
+/* 문의 정보 컨테이너 스타일 */
+.contact-info {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%); /* 그라데이션 배경을 설정합니다 */
+    padding: 30px; /* 안쪽 여백을 30px로 설정합니다 */
+    border-radius: 20px; /* 모서리를 둥글게 만듭니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    border: 2px solid #e3f2fd; /* 연한 파란색 테두리를 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* 부드러운 그림자 효과를 줍니다 */
+    margin-top: auto; /* 상단 여백을 자동으로 설정하여 하단에 배치합니다 */
+}
+
+/* 문의 메시지 스타일 */
+.contact-message {
+    font-size: 1.2rem; /* 글자 크기를 1.2rem으로 설정합니다 */
+    color: #4a90e2; /* 글자 색상을 파란색으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    margin-bottom: 15px; /* 아래쪽 여백을 15px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 문의 전화번호 스타일 */
+.contact-number {
+    font-size: 1.4rem; /* 글자 크기를 1.4rem으로 설정합니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    margin: 0; /* 여백을 제거합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    letter-spacing: 1px; /* 글자 간격을 1px로 설정합니다 */
+}
+
+/* 히스토리 더보기 버튼 스타일 */
+.history-toggle-btn {
+    background-color: #4a90e2; /* 배경색을 파란색으로 설정합니다 */
+    color: #fff; /* 글자 색상을 흰색으로 설정합니다 */
+    border: none; /* 테두리를 제거합니다 */
+    padding: 12px 30px; /* 위아래 12px, 좌우 30px의 안쪽 여백을 줍니다 */
+    border-radius: 25px; /* 모서리를 둥글게 만듭니다 */
+    cursor: pointer; /* 마우스를 올렸을 때 커서를 포인터로 변경합니다 */
+    font-size: 1rem; /* 글자 크기를 1rem으로 설정합니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초의 부드러운 전환 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3); /* 버튼에 파란색 그림자 효과를 줍니다 */
+    margin-bottom: 40px; /* 아래쪽 여백을 40px로 설정합니다 */
+    align-self: flex-start; /* 왼쪽 정렬합니다 */
+    font-weight: 600; /* 글자를 조금 굵게 만듭니다 */
+}
+
+/* 히스토리 더보기 버튼에 마우스를 올렸을 때 스타일 */
+.history-toggle-btn:hover {
+    background-color: #3a7bc8; /* 배경색을 더 진한 파란색으로 변경합니다 */
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4); /* 그림자를 더 크게 만듭니다 */
+    transform: translateY(-3px); /* 버튼을 위로 3px 이동시킵니다 */
+}
+
+/* 반응형 디자인: 화면 너비가 768px 이하일 때 적용되는 스타일 */
+@media (max-width: 768px) {
+    /* 헤더 스타일 조정 */
+    .header {
+        padding: 15px; /* 안쪽 여백을 줄입니다 */
+        flex-wrap: wrap; /* 요소들이 필요에 따라 줄바꿈되도록 합니다 */
+    }
+    
+    /* 로고 컨테이너 스타일 조정 */
+    .logo-container {
+        flex: 0 0 auto; /* 크기를 고정합니다 */
+        margin-right: auto; /* 오른쪽 여백을 자동으로 설정하여 왼쪽에 붙입니다 */
+    }
+    
+    /* 브랜드 컨테이너 스타일 조정 */
+    .brand-container {
+        flex: 1 0 100%; /* 전체 너비를 차지하고 줄바꿈되도록 합니다 */
+        order: 3; /* 순서를 변경하여 로고와 메뉴 버튼 아래에 배치합니다 */
+        margin-top: 10px; /* 위쪽 여백을 추가합니다 */
+    }
+    
+    /* 브랜드 이름 스타일 조정 */
+    .brand-name {
+        font-size: 1.2rem; /* 글자 크기를 줄입니다 */
+    }
+    
+    /* 네비게이션 메뉴 스타일 조정 */
+    .header-nav {
+        position: fixed; /* 메뉴를 고정 위치로 설정합니다 */
+        top: 0; /* 상단에 붙입니다 */
+        right: -100%; /* 화면 오른쪽 바깥으로 숨깁니다 */
+        width: 70%; /* 너비를 화면의 70%로 설정합니다 */
+        height: 100vh; /* 높이를 화면 전체 높이로 설정합니다 */
+        background-color: white; /* 배경색을 흰색으로 설정합니다 */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* 왼쪽에 그림자 효과를 줍니다 */
+        padding: 80px 20px 20px; /* 위 80px, 좌우 20px, 아래 20px의 안쪽 여백을 줍니다 */
+        transition: right 0.3s ease; /* 오른쪽 위치 변화에 0.3초의 부드러운 전환 효과를 줍니다 */
+        z-index: 999; /* 다른 요소보다 앞에 표시되도록 합니다 */
+    }
+    
+    /* 메뉴가 열렸을 때 스타일 */
+    .header-nav.active {
+        right: 0; /* 화면 오른쪽에 표시합니다 */
+    }
+    
+    /* 네비게이션 메뉴 항목 스타일 조정 */
+    .nav-menu {
+        flex-direction: column; /* 메뉴 항목을 세로로 배치합니다 */
+        gap: 15px; /* 메뉴 항목 사이 간격을 15px로 설정합니다 */
+    }
+    
+    /* 메뉴 항목 스타일 조정 */
+    .nav-menu li a {
+        display: block; /* 블록 레벨 요소로 변경합니다 */
+        padding: 10px; /* 안쪽 여백을 10px로 설정합니다 */
+        font-size: 1.1rem; /* 글자 크기를 1.1rem으로 설정합니다 */
+    }
+    
+    /* 모바일 메뉴 버튼 표시 */
+    .mobile-menu-btn {
+        display: flex; /* 모바일 화면에서 버튼을 표시합니다 */
+    }
+    
+    /* 메뉴가 열렸을 때 햄버거 아이콘 변형 (X 모양) */
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px); /* 첫 번째 선을 45도 회전시켜 X의 한 부분을 만듭니다 */
+    }
+    
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0; /* 두 번째 선을 숨깁니다 */
+    }
+    
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px); /* 세 번째 선을 -45도 회전시켜 X의 다른 부분을 만듭니다 */
+    }
+
+    /* 히어로 섹션 모바일 스타일 */
+    .hero-section {
+        height: 60vh; /* 모바일에서는 높이를 60%로 줄입니다 */
+    }
+    
+    /* 브랜드 제목 모바일 스타일 */
+    .brand-title {
+        font-size: 2.5rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 슬라이드 텍스트 모바일 스타일 */
+    .slide-text {
+        font-size: 1.3rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 예약하기 버튼 모바일 스타일 */
+    .reservation-btn {
+        padding: 12px 30px; /* 모바일에서는 안쪽 여백을 줄입니다 */
+        font-size: 1.1rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 슬라이더 화살표 버튼 모바일 스타일 */
+    .slider-arrow {
+        width: 50px; /* 모바일에서는 너비를 줄입니다 */
+        height: 50px; /* 모바일에서는 높이를 줄입니다 */
+        font-size: 2rem; /* 모바일에서는 아이콘 크기를 줄입니다 */
+    }
+    
+    /* 화살표 버튼 위치 조정 */
+    .prev-arrow {
+        left: 20px; /* 모바일에서는 왼쪽 여백을 줄입니다 */
+    }
+    
+    .next-arrow {
+        right: 20px; /* 모바일에서는 오른쪽 여백을 줄입니다 */
+    }
+    
+    /* 디자이너 그리드 모바일 스타일 (2X4 배치) */
+    .designers-grid {
+        grid-template-columns: repeat(2, 1fr); /* 모바일에서는 2개 컬럼으로 변경합니다 */
+        grid-template-rows: repeat(4, 1fr); /* 4개 행으로 변경합니다 */
+        gap: 6px; /* 모바일에서는 간격을 6px로 늘립니다 */
+    }
+    
+    /* 디자이너 이미지 모바일 스타일 */
+    .designer-image {
+        height: 150px; /* 모바일에서는 이미지 높이를 줄입니다 */
+    }
+    
+    /* 제품 타이틀 모바일 스타일 */
+    .product-title {
+        font-size: 2rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 전체 설명 모달 모바일 스타일 */
+    .full-description {
+        width: 90%; /* 모바일에서는 너비를 90%로 늘립니다 */
+        padding: 20px; /* 안쪽 여백을 줄입니다 */
+    }
+
+    /* 고객 후기 제목의 글자 크기를 줄입니다 */
+    .review-title {
+        font-size: 2rem; /* 글자 크기를 2rem으로 줄입니다 */
+    }
+    
+    /* 고객 후기 그리드를 2열로 변경합니다 */
+    .review-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2개의 동일한 너비 열로 변경합니다 */
+        gap: 20px; /* 간격을 20px로 줄입니다 */
+    }
+    
+    /* 고객 후기 카드의 안쪽 여백을 줄입니다 */
+    .review-card {
+        padding: 20px; /* 안쪽 여백을 20px로 줄입니다 */
+    }
+    
+    /* 고객 이름의 글자 크기를 줄입니다 */
+    .customer-name {
+        font-size: 1rem; /* 글자 크기를 1rem으로 줄입니다 */
+    }
+    
+    /* 별점의 크기를 줄입니다 */
+    .star {
+        font-size: 1.1rem; /* 별 크기를 1.1rem으로 줄입니다 */
+    }
+    
+    /* 후기 내용의 글자 크기를 줄입니다 */
+    .review-content p {
+        font-size: 0.85rem; /* 글자 크기를 0.85rem으로 줄입니다 */
+    }
+
+    /* 브랜드 히스토리 제목 모바일 스타일 */
+    .history-title {
+        font-size: 2rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-bottom: 40px; /* 아래쪽 여백을 40px로 설정합니다 */
+    }
+
+    /* 브랜드 히스토리 내용 컨테이너 모바일 스타일 */
+    .history-content {
+        flex-direction: column; /* 내부 요소를 세로로 배치합니다 */
+        gap: 30px; /* 이미지와 텍스트 사이 간격을 30px로 줄입니다 */
+        padding: 0 15px; /* 좌우 여백을 15px로 줄입니다 */
+    }
+
+    /* 브랜드 히스토리 이미지 모바일 스타일 */
+    .history-image {
+        flex: none; /* 고정 너비를 해제합니다 */
+        width: 100%; /* 이미지를 화면 전체 너비로 설정합니다 */
+        order: 1; /* 이미지를 첫 번째로 배치합니다 */
+    }
+    
+    /* 브랜드 히스토리 이미지 img 모바일 스타일 */
+    .history-image img {
+        height: 280px; /* 모바일에서는 이미지 높이를 280px로 설정합니다 */
+        object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너에 맞춥니다 */
+        border-radius: 15px; /* 모바일에서는 모서리를 15px로 줄입니다 */
+    }
+
+    /* 브랜드 히스토리 텍스트 영역 모바일 스타일 */
+    .history-text {
+        flex: none; /* flex를 해제합니다 */
+        width: 100%; /* 텍스트 영역을 화면 전체 너비로 설정합니다 */
+        padding: 15px 0; /* 위아래 여백을 15px로 줄입니다 */
+        order: 2; /* 텍스트를 두 번째로 배치합니다 */
+    }
+
+    /* 인사말 제목 모바일 스타일 */
+    .greeting-title {
+        font-size: 1.6rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-bottom: 25px; /* 아래쪽 여백을 25px로 줄입니다 */
+        text-align: center; /* 모바일에서는 가운데 정렬합니다 */
+    }
+
+    /* 브랜드 가치 내용 모바일 스타일 */
+    .brand-values {
+        margin-bottom: 25px; /* 아래쪽 여백을 25px로 줄입니다 */
+    }
+    
+    /* 브랜드 가치 문단 모바일 스타일 */
+    .brand-values p {
+        font-size: 1rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        line-height: 1.6; /* 줄 간격을 1.6배로 조정합니다 */
+        margin: 8px 0; /* 위아래 여백을 8px로 줄입니다 */
+    }
+
+    /* 강조된 제목 모바일 스타일 */
+    .brand-values p strong {
+        font-size: 1.05rem; /* 모바일에서는 강조 텍스트 크기를 줄입니다 */
+    }
+
+    /* 숨겨진 브랜드 가치 내용 모바일 스타일 */
+    .full-values {
+        margin-top: 15px; /* 위쪽 여백을 15px로 줄입니다 */
+    }
+    
+    /* 숨겨진 브랜드 가치 문단 모바일 스타일 */
+    .full-values p {
+        font-size: 0.95rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+
+    /* 서명 모바일 스타일 */
+    .signature {
+        font-size: 1rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-top: 25px; /* 위쪽 여백을 25px로 줄입니다 */
+    }
+
+    /* 문의 정보 컨테이너 모바일 스타일 */
+    .contact-info {
+        padding: 20px; /* 안쪽 여백을 20px로 줄입니다 */
+        border-radius: 15px; /* 모서리를 15px로 줄입니다 */
+    }
+
+    /* 문의 메시지 모바일 스타일 */
+    .contact-message {
+        font-size: 1.1rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-bottom: 12px; /* 아래쪽 여백을 12px로 줄입니다 */
+    }
+
+    /* 문의 전화번호 모바일 스타일 */
+    .contact-number {
+        font-size: 1.2rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+
+    /* 히스토리 더보기 버튼 모바일 스타일 */
+    .history-toggle-btn {
+        padding: 10px 25px; /* 모바일에서는 안쪽 여백을 줄입니다 */
+        font-size: 0.9rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-bottom: 30px; /* 아래쪽 여백을 30px로 줄입니다 */
+        align-self: center; /* 모바일에서는 가운데 정렬합니다 */
+    }
+    
+    /* === 푸터 섹션 모바일 스타일 === */
+    
+    /* 푸터 섹션 모바일 스타일 */
+    .footer-section {
+        padding: 40px 0 20px 0; /* 모바일에서는 여백을 줄입니다 */
+    }
+    
+    /* 푸터 상단 모바일 스타일 */
+    .footer-top {
+        margin-bottom: 30px; /* 아래쪽 여백을 30px로 줄입니다 */
+        padding-bottom: 15px; /* 하단 패딩을 15px로 줄입니다 */
+    }
+    
+    /* 푸터 링크들 모바일 스타일 */
+    .footer-links {
+        gap: 10px; /* 링크 사이 간격을 10px로 줄입니다 */
+    }
+    
+    /* 푸터 링크 모바일 스타일 */
+    .footer-link {
+        font-size: 0.9rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 푸터 메인 영역 모바일 스타일 */
+    .footer-main {
+        margin-bottom: 30px; /* 아래쪽 여백을 30px로 줄입니다 */
+    }
+    
+    /* 푸터 정보 그리드 모바일 스타일 */
+    .footer-info-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2개의 열로 변경합니다 */
+        gap: 20px; /* 간격을 20px로 줄입니다 */
+    }
+    
+    /* 푸터 정보 항목 모바일 스타일 */
+    .footer-info-item {
+        padding: 15px; /* 안쪽 여백을 15px로 줄입니다 */
+    }
+    
+    /* 정보 라벨 모바일 스타일 */
+    .info-label {
+        font-size: 0.8rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-bottom: 6px; /* 아래쪽 여백을 6px로 줄입니다 */
+    }
+    
+    /* 정보 값 모바일 스타일 */
+    .info-value {
+        font-size: 0.9rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 전화번호 모바일 스타일 */
+    .phone-number {
+        font-size: 1rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 푸터 하단 모바일 스타일 */
+    .footer-bottom {
+        flex-direction: column; /* 세로 방향으로 배치합니다 */
+        gap: 20px; /* 요소 사이 간격을 20px로 설정합니다 */
+        padding-top: 20px; /* 상단 패딩을 20px로 줄입니다 */
+        text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    }
+    
+    /* 소셜미디어 링크 모바일 스타일 */
+    .social-link {
+        padding: 8px 12px; /* 안쪽 여백을 줄입니다 */
+        gap: 6px; /* 아이콘과 텍스트 사이 간격을 6px로 줄입니다 */
+    }
+    
+    /* 인스타그램 아이콘 모바일 스타일 */
+    .instagram-icon {
+        width: 18px; /* 아이콘 너비를 18px로 줄입니다 */
+        height: 18px; /* 아이콘 높이를 18px로 줄입니다 */
+    }
+    
+    /* 소셜미디어 텍스트 모바일 스타일 */
+    .social-text {
+        font-size: 0.85rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 저작권 텍스트 모바일 스타일 */
+    .copyright p {
+        font-size: 0.8rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* === 오시는 길 안내 섹션 모바일 스타일 === */
+    
+    /* 오시는 길 안내 섹션 모바일 스타일 */
+    .directions-section {
+        padding: 60px 0; /* 모바일에서는 여백을 줄입니다 */
+    }
+    
+    /* 오시는 길 제목 모바일 스타일 */
+    .directions-title {
+        font-size: 2rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-bottom: 40px; /* 아래쪽 여백을 40px로 줄입니다 */
+    }
+    
+    /* 오시는 길 내용 컨테이너 모바일 스타일 */
+    .directions-content {
+        grid-template-columns: 1fr; /* 1개의 열로 변경합니다 (세로 배치) */
+        gap: 30px; /* 간격을 30px로 줄입니다 */
+        margin-bottom: 40px; /* 아래쪽 여백을 40px로 줄입니다 */
+    }
+    
+    /* 주차장/도보 정보 모바일 스타일 */
+    .parking-info,
+    .walking-info {
+        padding: 25px; /* 안쪽 여백을 25px로 줄입니다 */
+        border-radius: 15px; /* 모서리를 15px로 줄입니다 */
+    }
+    
+    /* 정보 섹션 제목 모바일 스타일 */
+    .info-section-title {
+        font-size: 1.3rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-bottom: 15px; /* 아래쪽 여백을 15px로 줄입니다 */
+    }
+    
+    /* 정보 강조 박스 모바일 스타일 */
+    .info-highlight {
+        padding: 18px; /* 안쪽 여백을 18px로 줄입니다 */
+        margin-bottom: 20px; /* 아래쪽 여백을 20px로 줄입니다 */
+        border-radius: 12px; /* 모서리를 12px로 줄입니다 */
+    }
+    
+    /* 강조 박스 내 문단 모바일 스타일 */
+    .info-highlight p {
+        font-size: 1rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 방법 제목 모바일 스타일 */
+    .method-title {
+        font-size: 1.1rem; /* 모바일에서는 글자 크기를 줄입니다 */
+        margin-bottom: 15px; /* 아래쪽 여백을 15px로 줄입니다 */
+    }
+    
+    /* 방법 단계들 모바일 스타일 */
+    .method-steps {
+        gap: 12px; /* 단계 사이 간격을 12px로 줄입니다 */
+    }
+    
+    /* 단계 번호 모바일 스타일 */
+    .step-number {
+        width: 25px; /* 너비를 25px로 줄입니다 */
+        height: 25px; /* 높이를 25px로 줄입니다 */
+        font-size: 0.8rem; /* 글자 크기를 0.8rem으로 줄입니다 */
+    }
+    
+    /* 단계 설명 문단 모바일 스타일 */
+    .step-item p {
+        font-size: 0.9rem; /* 모바일에서는 글자 크기를 줄입니다 */
+    }
+    
+    /* 주소 정보 컨테이너 모바일 스타일 */
+    .address-info {
+        padding: 25px; /* 안쪽 여백을 25px로 줄입니다 */
+        margin-bottom: 30px; /* 아래쪽 여백을 30px로 줄입니다 */
+        border-radius: 15px; /* 모서리를 15px로 줄입니다 */
+        grid-template-columns: 1fr; /* 1개의 열로 변경합니다 (세로 배치) */
+        gap: 20px; /* 간격을 20px로 줄입니다 */
+    }
+    
+    /* 개별 주소 항목 모바일 스타일 */
+    .address-item {
+        flex-direction: column; /* 세로 방향으로 배치합니다 */
+        align-items: flex-start; /* 왼쪽으로 정렬합니다 */
+        gap: 5px; /* 요소 사이 간격을 5px로 줄입니다 */
+        text-align: left; /* 텍스트를 왼쪽으로 정렬합니다 */
+    }
+    
+    /* 주소 아이콘 모바일 스타일 */
+    .address-icon {
+        font-size: 1.1rem; /* 아이콘 크기를 1.1rem으로 줄입니다 */
+        width: auto; /* 너비를 자동으로 설정합니다 */
+    }
+    
+    /* 주소 라벨 모바일 스타일 */
+    .address-label {
+        min-width: auto; /* 최소 너비를 자동으로 설정합니다 */
+        font-size: 0.9rem; /* 글자 크기를 0.9rem으로 줄입니다 */
+    }
+    
+    /* 주소 텍스트 모바일 스타일 */
+    .address-text {
+        font-size: 0.9rem; /* 글자 크기를 0.9rem으로 줄입니다 */
+    }
+    
+
+    
+    /* 네이버 지도 버튼 모바일 스타일 */
+    .naver-map-btn {
+        padding: 12px 25px; /* 안쪽 여백을 줄입니다 */
+        font-size: 1rem; /* 글자 크기를 1rem으로 줄입니다 */
+        border-radius: 25px; /* 모서리를 25px로 줄입니다 */
+        gap: 8px; /* 요소 사이 간격을 8px로 줄입니다 */
+    }
+    
+    /* 지도 아이콘 모바일 스타일 */
+    .map-icon {
+        font-size: 1.2rem; /* 아이콘 크기를 1.2rem으로 줄입니다 */
+    }
+}
+
+/* 반응형 디자인: 화면 너비가 480px 이하일 때 적용되는 스타일 (모바일) */
+@media (max-width: 480px) {
+    /* 히어로 섹션 초소형 화면 스타일 */
+    .hero-section {
+        height: 50vh; /* 초소형 화면에서는 높이를 50%로 더 줄입니다 */
+    }
+
+    /* 브랜드 제목 초소형 화면 스타일 */
+    .brand-title {
+        font-size: 2rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+
+    /* 슬라이드 텍스트 초소형 화면 스타일 */
+    .slide-text {
+        font-size: 1.1rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+
+    /* 예약하기 버튼 초소형 화면 스타일 */
+    .reservation-btn {
+        padding: 10px 25px; /* 초소형 화면에서는 안쪽 여백을 더 줄입니다 */
+        font-size: 1rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+
+    /* 제품 제목의 글자 크기를 더 줄입니다 */
+    .product-title {
+        font-size: 1.8rem; /* 글자 크기를 1.8rem으로 더 줄입니다 */
+    }
+
+    /* 디자이너 그리드를 1열로 변경합니다 */
+    .designer-grid {
+        grid-template-columns: 1fr; /* 1개의 열로 변경합니다 (세로 배치) */
+        gap: 10px; /* 간격을 10px로 더 줄입니다 */
+    }
+
+    /* 디자이너 카드의 안쪽 여백을 더 줄입니다 */
+    .designer-card {
+        padding: 10px; /* 안쪽 여백을 10px로 더 줄입니다 */
+    }
+
+    /* 디자이너 이름의 글자 크기를 더 줄입니다 */
+    .designer-card h3 {
+        font-size: 1.1rem; /* 글자 크기를 1.1rem으로 더 줄입니다 */
+    }
+
+    /* 디자이너 설명의 글자 크기를 더 줄입니다 */
+    .designer-description p {
+        font-size: 0.7rem; /* 글자 크기를 0.7rem으로 더 줄입니다 */
+    }
+    
+    /* 고객 후기 제목의 글자 크기를 더 줄입니다 */
+    .review-title {
+        font-size: 1.8rem; /* 글자 크기를 1.8rem으로 더 줄입니다 */
+    }
+    
+    /* 고객 후기 그리드를 1열로 변경합니다 */
+    .review-grid {
+        grid-template-columns: 1fr; /* 1개의 열로 변경합니다 (세로 배치) */
+        gap: 15px; /* 간격을 15px로 더 줄입니다 */
+    }
+    
+    /* 고객 후기 카드의 안쪽 여백을 더 줄입니다 */
+    .review-card {
+        padding: 15px; /* 안쪽 여백을 15px로 더 줄입니다 */
+    }
+    
+    /* 고객 이름의 글자 크기를 더 줄입니다 */
+    .customer-name {
+        font-size: 0.9rem; /* 글자 크기를 0.9rem으로 더 줄입니다 */
+    }
+    
+    /* 별점의 크기를 더 줄입니다 */
+    .star {
+        font-size: 1rem; /* 별 크기를 1rem으로 더 줄입니다 */
+    }
+    
+    /* 후기 내용의 글자 크기를 더 줄입니다 */
+    .review-content p {
+        font-size: 0.8rem; /* 글자 크기를 0.8rem으로 더 줄입니다 */
+    }
+
+    /* 브랜드 히스토리 제목 초소형 화면 스타일 */
+    .history-title {
+        font-size: 1.8rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-bottom: 35px; /* 아래쪽 여백을 35px로 설정합니다 */
+    }
+
+    /* 브랜드 히스토리 내용 컨테이너 초소형 화면 스타일 */
+    .history-content {
+        flex-direction: column; /* 내부 요소를 세로로 배치합니다 */
+        gap: 25px; /* 이미지와 텍스트 사이 간격을 25px로 줄입니다 */
+        padding: 0 10px; /* 좌우 여백을 10px로 더 줄입니다 */
+    }
+
+    /* 브랜드 히스토리 이미지 초소형 화면 스타일 */
+    .history-image {
+        width: 100%; /* 이미지를 화면 전체 너비로 설정합니다 */
+        order: 1; /* 이미지를 첫 번째로 배치합니다 */
+    }
+    
+    /* 브랜드 히스토리 이미지 img 초소형 화면 스타일 */
+    .history-image img {
+        height: 240px; /* 초소형 화면에서는 이미지 높이를 240px로 설정합니다 */
+        object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너에 맞춥니다 */
+        border-radius: 12px; /* 초소형 화면에서는 모서리를 12px로 더 줄입니다 */
+    }
+
+    /* 브랜드 히스토리 텍스트 영역 초소형 화면 스타일 */
+    .history-text {
+        width: 100%; /* 텍스트 영역을 화면 전체 너비로 설정합니다 */
+        padding: 10px 0; /* 위아래 여백을 10px로 더 줄입니다 */
+        order: 2; /* 텍스트를 두 번째로 배치합니다 */
+    }
+
+    /* 인사말 제목 초소형 화면 스타일 */
+    .greeting-title {
+        font-size: 1.4rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-bottom: 20px; /* 아래쪽 여백을 20px로 더 줄입니다 */
+        text-align: center; /* 초소형 화면에서는 가운데 정렬합니다 */
+        line-height: 1.4; /* 줄 간격을 1.4배로 조정합니다 */
+    }
+
+    /* 브랜드 가치 내용 초소형 화면 스타일 */
+    .brand-values {
+        margin-bottom: 20px; /* 아래쪽 여백을 20px로 더 줄입니다 */
+    }
+    
+    /* 브랜드 가치 문단 초소형 화면 스타일 */
+    .brand-values p {
+        font-size: 0.9rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        line-height: 1.5; /* 줄 간격을 1.5배로 조정합니다 */
+        margin: 6px 0; /* 위아래 여백을 6px로 더 줄입니다 */
+    }
+
+    /* 강조된 제목 초소형 화면 스타일 */
+    .brand-values p strong {
+        font-size: 0.95rem; /* 초소형 화면에서는 강조 텍스트 크기를 더 줄입니다 */
+    }
+
+    /* 숨겨진 브랜드 가치 내용 초소형 화면 스타일 */
+    .full-values {
+        margin-top: 12px; /* 위쪽 여백을 12px로 더 줄입니다 */
+    }
+    
+    /* 숨겨진 브랜드 가치 문단 초소형 화면 스타일 */
+    .full-values p {
+        font-size: 0.85rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+
+    /* 서명 초소형 화면 스타일 */
+    .signature {
+        font-size: 0.9rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-top: 20px; /* 위쪽 여백을 20px로 더 줄입니다 */
+    }
+
+    /* 히스토리 더보기 버튼 초소형 화면 스타일 */
+    .history-toggle-btn {
+        padding: 8px 20px; /* 초소형 화면에서는 안쪽 여백을 더 줄입니다 */
+        font-size: 0.85rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-bottom: 25px; /* 아래쪽 여백을 25px로 더 줄입니다 */
+        align-self: center; /* 초소형 화면에서는 가운데 정렬합니다 */
+    }
+
+    /* 문의 정보 컨테이너 초소형 화면 스타일 */
+    .contact-info {
+        padding: 18px; /* 안쪽 여백을 18px로 더 줄입니다 */
+        border-radius: 12px; /* 모서리를 12px로 더 줄입니다 */
+    }
+
+    /* 문의 메시지 초소형 화면 스타일 */
+    .contact-message {
+        font-size: 1rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-bottom: 10px; /* 아래쪽 여백을 10px로 더 줄입니다 */
+    }
+
+    /* 문의 전화번호 초소형 화면 스타일 */
+    .contact-number {
+        font-size: 1.1rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+    
+    /* === 푸터 섹션 초소형 화면 스타일 === */
+    
+    /* 푸터 섹션 초소형 화면 스타일 */
+    .footer-section {
+        padding: 30px 0 15px 0; /* 초소형 화면에서는 여백을 더 줄입니다 */
+    }
+    
+    /* 푸터 상단 초소형 화면 스타일 */
+    .footer-top {
+        margin-bottom: 25px; /* 아래쪽 여백을 25px로 더 줄입니다 */
+        padding-bottom: 12px; /* 하단 패딩을 12px로 더 줄입니다 */
+    }
+    
+    /* 푸터 링크들 초소형 화면 스타일 */
+    .footer-links {
+        flex-direction: column; /* 세로 방향으로 배치합니다 */
+        gap: 8px; /* 링크 사이 간격을 8px로 더 줄입니다 */
+    }
+    
+    /* 푸터 링크 초소형 화면 스타일 */
+    .footer-link {
+        font-size: 0.85rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+    
+    /* 푸터 메인 영역 초소형 화면 스타일 */
+    .footer-main {
+        margin-bottom: 25px; /* 아래쪽 여백을 25px로 더 줄입니다 */
+    }
+    
+    /* 푸터 정보 그리드 초소형 화면 스타일 */
+    .footer-info-grid {
+        grid-template-columns: 1fr; /* 1개의 열로 변경합니다 (세로 배치) */
+        gap: 15px; /* 간격을 15px로 더 줄입니다 */
+    }
+    
+    /* 푸터 정보 항목 초소형 화면 스타일 */
+    .footer-info-item {
+        padding: 12px; /* 안쪽 여백을 12px로 더 줄입니다 */
+    }
+    
+    /* 정보 라벨 초소형 화면 스타일 */
+    .info-label {
+        font-size: 0.75rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-bottom: 5px; /* 아래쪽 여백을 5px로 더 줄입니다 */
+    }
+    
+    /* 정보 값 초소형 화면 스타일 */
+    .info-value {
+        font-size: 0.85rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+    
+    /* 전화번호 초소형 화면 스타일 */
+    .phone-number {
+        font-size: 0.95rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+    
+    /* 푸터 하단 초소형 화면 스타일 */
+    .footer-bottom {
+        flex-direction: column; /* 세로 방향으로 배치합니다 */
+        gap: 15px; /* 요소 사이 간격을 15px로 더 줄입니다 */
+        padding-top: 15px; /* 상단 패딩을 15px로 더 줄입니다 */
+        text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    }
+    
+    /* 소셜미디어 링크 초소형 화면 스타일 */
+    .social-link {
+        padding: 6px 10px; /* 안쪽 여백을 더 줄입니다 */
+        gap: 5px; /* 아이콘과 텍스트 사이 간격을 5px로 더 줄입니다 */
+    }
+    
+    /* 인스타그램 아이콘 초소형 화면 스타일 */
+    .instagram-icon {
+        width: 16px; /* 아이콘 너비를 16px로 더 줄입니다 */
+        height: 16px; /* 아이콘 높이를 16px로 더 줄입니다 */
+    }
+    
+    /* 소셜미디어 텍스트 초소형 화면 스타일 */
+    .social-text {
+        font-size: 0.8rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+    
+    /* 저작권 텍스트 초소형 화면 스타일 */
+    .copyright p {
+        font-size: 0.75rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+    
+    /* === 오시는 길 안내 섹션 초소형 화면 스타일 === */
+    
+    /* 오시는 길 안내 섹션 초소형 화면 스타일 */
+    .directions-section {
+        padding: 50px 0; /* 초소형 화면에서는 여백을 더 줄입니다 */
+    }
+    
+    /* 오시는 길 제목 초소형 화면 스타일 */
+    .directions-title {
+        font-size: 1.8rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-bottom: 35px; /* 아래쪽 여백을 35px로 더 줄입니다 */
+    }
+    
+    /* 오시는 길 내용 컨테이너 초소형 화면 스타일 */
+    .directions-content {
+        gap: 25px; /* 간격을 25px로 더 줄입니다 */
+        margin-bottom: 35px; /* 아래쪽 여백을 35px로 더 줄입니다 */
+    }
+    
+    /* 주차장/도보 정보 초소형 화면 스타일 */
+    .parking-info,
+    .walking-info {
+        padding: 20px; /* 안쪽 여백을 20px로 더 줄입니다 */
+        border-radius: 12px; /* 모서리를 12px로 더 줄입니다 */
+    }
+    
+    /* 정보 섹션 제목 초소형 화면 스타일 */
+    .info-section-title {
+        font-size: 1.2rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-bottom: 12px; /* 아래쪽 여백을 12px로 더 줄입니다 */
+    }
+    
+    /* 정보 강조 박스 초소형 화면 스타일 */
+    .info-highlight {
+        padding: 15px; /* 안쪽 여백을 15px로 더 줄입니다 */
+        margin-bottom: 18px; /* 아래쪽 여백을 18px로 더 줄입니다 */
+        border-radius: 10px; /* 모서리를 10px로 더 줄입니다 */
+    }
+    
+    /* 강조 박스 내 문단 초소형 화면 스타일 */
+    .info-highlight p {
+        font-size: 0.9rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+    }
+    
+    /* 방법 제목 초소형 화면 스타일 */
+    .method-title {
+        font-size: 1rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        margin-bottom: 12px; /* 아래쪽 여백을 12px로 더 줄입니다 */
+    }
+    
+    /* 방법 단계들 초소형 화면 스타일 */
+    .method-steps {
+        gap: 10px; /* 단계 사이 간격을 10px로 더 줄입니다 */
+    }
+    
+    /* 단계 번호 초소형 화면 스타일 */
+    .step-number {
+        width: 22px; /* 너비를 22px로 더 줄입니다 */
+        height: 22px; /* 높이를 22px로 더 줄입니다 */
+        font-size: 0.75rem; /* 글자 크기를 0.75rem으로 더 줄입니다 */
+    }
+    
+    /* 단계 설명 문단 초소형 화면 스타일 */
+    .step-item p {
+        font-size: 0.85rem; /* 초소형 화면에서는 글자 크기를 더 줄입니다 */
+        line-height: 1.5; /* 줄 간격을 1.5배로 조정합니다 */
+    }
+    
+    /* 주소 정보 컨테이너 초소형 화면 스타일 */
+    .address-info {
+        padding: 20px; /* 안쪽 여백을 20px로 더 줄입니다 */
+        margin-bottom: 25px; /* 아래쪽 여백을 25px로 더 줄입니다 */
+        border-radius: 12px; /* 모서리를 12px로 더 줄입니다 */
+        gap: 15px; /* 간격을 15px로 더 줄입니다 */
+    }
+    
+    /* 개별 주소 항목 초소형 화면 스타일 */
+    .address-item {
+        gap: 3px; /* 요소 사이 간격을 3px로 더 줄입니다 */
+    }
+    
+    /* 주소 아이콘 초소형 화면 스타일 */
+    .address-icon {
+        font-size: 1rem; /* 아이콘 크기를 1rem으로 더 줄입니다 */
+    }
+    
+    /* 주소 라벨 초소형 화면 스타일 */
+    .address-label {
+        font-size: 0.85rem; /* 글자 크기를 0.85rem으로 더 줄입니다 */
+    }
+    
+    /* 주소 텍스트 초소형 화면 스타일 */
+    .address-text {
+        font-size: 0.85rem; /* 글자 크기를 0.85rem으로 더 줄입니다 */
+    }
+    
+
+    
+    /* 네이버 지도 버튼 초소형 화면 스타일 */
+    .naver-map-btn {
+        padding: 10px 20px; /* 안쪽 여백을 더 줄입니다 */
+        font-size: 0.9rem; /* 글자 크기를 0.9rem으로 더 줄입니다 */
+        border-radius: 20px; /* 모서리를 20px로 더 줄입니다 */
+        gap: 6px; /* 요소 사이 간격을 6px로 더 줄입니다 */
+    }
+    
+    /* 지도 아이콘 초소형 화면 스타일 */
+    .map-icon {
+        font-size: 1.1rem; /* 아이콘 크기를 1.1rem으로 더 줄입니다 */
+    }
+    
+    /* 외부 링크 아이콘 초소형 화면 스타일 */
+    .external-icon {
+        font-size: 0.9rem; /* 아이콘 크기를 0.9rem으로 더 줄입니다 */
+    }
+}
+
+/* === 푸터 섹션 스타일 === */
+
+/* 푸터 섹션 전체 스타일 */
+.footer-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* 어두운 그라데이션 배경을 설정합니다 */
+    color: #ecf0f1; /* 텍스트 색상을 밝은 회색으로 설정합니다 */
+    padding: 60px 0 30px 0; /* 위쪽 60px, 아래쪽 30px 여백을 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    margin-top: 0; /* 위쪽 여백을 제거합니다 */
+}
+
+/* 푸터 상단 스타일 (이용약관 링크 영역) */
+.footer-top {
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    margin-bottom: 40px; /* 아래쪽 여백을 40px로 설정합니다 */
+    padding-bottom: 20px; /* 하단 패딩을 20px로 설정합니다 */
+    border-bottom: 1px solid #4a5f73; /* 하단에 연한 회색 테두리를 설정합니다 */
+}
+
+/* 푸터 링크들 컨테이너 스타일 */
+.footer-links {
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    justify-content: center; /* 가운데 정렬합니다 */
+    align-items: center; /* 수직 가운데 정렬합니다 */
+    gap: 15px; /* 링크 사이 간격을 15px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 푸터 링크 스타일 */
+.footer-link {
+    color: #bdc3c7; /* 링크 색상을 연한 회색으로 설정합니다 */
+    text-decoration: none; /* 밑줄을 제거합니다 */
+    font-size: 0.95rem; /* 글자 크기를 0.95rem으로 설정합니다 */
+    font-weight: 500; /* 글자를 중간 굵기로 설정합니다 */
+    transition: color 0.3s ease; /* 색상 변화에 0.3초 전환 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 푸터 링크에 마우스를 올렸을 때 스타일 */
+.footer-link:hover {
+    color: #3498db; /* 마우스를 올리면 파란색으로 변경합니다 */
+}
+
+/* 푸터 링크 구분자 스타일 */
+.footer-divider {
+    color: #7f8c8d; /* 구분자 색상을 회색으로 설정합니다 */
+    font-size: 0.9rem; /* 글자 크기를 0.9rem으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 푸터 메인 영역 스타일 */
+.footer-main {
+    margin-bottom: 40px; /* 아래쪽 여백을 40px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 푸터 정보 그리드 스타일 */
+.footer-info-grid {
+    display: grid; /* CSS 그리드 레이아웃을 사용합니다 */
+    grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 너비 열을 만듭니다 */
+    gap: 30px; /* 각 항목 사이의 간격을 30px로 설정합니다 */
+    max-width: 1000px; /* 최대 너비를 1000px로 제한합니다 */
+    margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정합니다 */
+}
+
+/* 푸터 정보 항목 스타일 */
+.footer-info-item {
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    padding: 20px; /* 안쪽 여백을 20px로 설정합니다 */
+    background: rgba(255, 255, 255, 0.05); /* 반투명 흰색 배경을 설정합니다 */
+    border-radius: 12px; /* 모서리를 둥글게 만듭니다 */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 반투명 흰색 테두리를 설정합니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초 전환 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 푸터 정보 항목에 마우스를 올렸을 때 스타일 */
+.footer-info-item:hover {
+    background: rgba(255, 255, 255, 0.08); /* 배경을 조금 더 밝게 만듭니다 */
+    transform: translateY(-2px); /* 항목을 위로 2px 이동시킵니다 */
+}
+
+/* 정보 라벨 스타일 (제목) */
+.info-label {
+    font-size: 0.85rem; /* 글자 크기를 0.85rem으로 설정합니다 */
+    color: #bdc3c7; /* 글자 색상을 연한 회색으로 설정합니다 */
+    margin-bottom: 8px; /* 아래쪽 여백을 8px로 설정합니다 */
+    font-weight: 500; /* 글자를 중간 굵기로 설정합니다 */
+    text-transform: uppercase; /* 글자를 대문자로 변환합니다 */
+    letter-spacing: 0.5px; /* 글자 간격을 0.5px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 정보 값 스타일 (내용) */
+.info-value {
+    font-size: 1rem; /* 글자 크기를 1rem으로 설정합니다 */
+    color: #ecf0f1; /* 글자 색상을 밝은 회색으로 설정합니다 */
+    font-weight: 600; /* 글자를 굵게 만듭니다 */
+    line-height: 1.4; /* 줄 간격을 1.4배로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 전화번호 특별 스타일 */
+.phone-number {
+    color: #3498db; /* 전화번호를 파란색으로 강조합니다 */
+    font-size: 1.1rem; /* 글자 크기를 1.1rem으로 더 크게 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    letter-spacing: 1px; /* 글자 간격을 1px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 푸터 하단 영역 스타일 */
+.footer-bottom {
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    justify-content: space-between; /* 양 끝으로 정렬합니다 */
+    align-items: center; /* 수직 가운데 정렬합니다 */
+    padding-top: 30px; /* 상단 패딩을 30px로 설정합니다 */
+    border-top: 1px solid #4a5f73; /* 상단에 연한 회색 테두리를 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 소셜미디어 링크 컨테이너 스타일 */
+.social-links {
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    gap: 15px; /* 링크 사이 간격을 15px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 소셜미디어 링크 스타일 */
+.social-link {
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    align-items: center; /* 수직 가운데 정렬합니다 */
+    gap: 8px; /* 아이콘과 텍스트 사이 간격을 8px로 설정합니다 */
+    color: #bdc3c7; /* 링크 색상을 연한 회색으로 설정합니다 */
+    text-decoration: none; /* 밑줄을 제거합니다 */
+    padding: 10px 15px; /* 안쪽 여백을 설정합니다 */
+    border-radius: 25px; /* 모서리를 둥글게 만듭니다 */
+    background: rgba(255, 255, 255, 0.05); /* 반투명 흰색 배경을 설정합니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초 전환 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 소셜미디어 링크에 마우스를 올렸을 때 스타일 */
+.social-link:hover {
+    color: #e1306c; /* 인스타그램 브랜드 색상으로 변경합니다 */
+    background: rgba(225, 48, 108, 0.1); /* 인스타그램 색상의 반투명 배경을 설정합니다 */
+    transform: translateY(-2px); /* 링크를 위로 2px 이동시킵니다 */
+}
+
+/* 인스타그램 아이콘 스타일 */
+.instagram-icon {
+    width: 20px; /* 아이콘 너비를 20px로 설정합니다 */
+    height: 20px; /* 아이콘 높이를 20px로 설정합니다 */
+    transition: transform 0.3s ease; /* 변형에 0.3초 전환 효과를 줍니다 */
+}
+
+/* 인스타그램 링크에 마우스를 올렸을 때 아이콘 스타일 */
+.instagram-link:hover .instagram-icon {
+    transform: scale(1.1); /* 아이콘을 1.1배 확대합니다 */
+}
+
+/* 소셜미디어 텍스트 스타일 */
+.social-text {
+    font-size: 0.9rem; /* 글자 크기를 0.9rem으로 설정합니다 */
+    font-weight: 500; /* 글자를 중간 굵기로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 저작권 정보 스타일 */
+.copyright {
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 저작권 텍스트 스타일 */
+.copyright p {
+    margin: 0; /* 여백을 제거합니다 */
+    font-size: 0.85rem; /* 글자 크기를 0.85rem으로 설정합니다 */
+    color: #95a5a6; /* 글자 색상을 연한 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* === 오시는 길 안내 섹션 스타일 === */
+
+/* 오시는 길 안내 섹션 전체 스타일 */
+.directions-section {
+    padding: 80px 0; /* 위아래 80px의 여백을 줍니다 */
+    background-color: #f8f9fa; /* 연한 회색 배경색을 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 오시는 길 제목 스타일 */
+.directions-title {
+    font-size: 2.5rem; /* 글자 크기를 2.5rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    margin-bottom: 50px; /* 아래쪽 여백을 50px로 설정합니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 오시는 길 내용 컨테이너 스타일 */
+.directions-content {
+    display: grid; /* CSS 그리드 레이아웃을 사용합니다 */
+    grid-template-columns: 1fr 1fr; /* 2개의 동일한 너비 열을 만듭니다 */
+    gap: 40px; /* 열 사이의 간격을 40px로 설정합니다 */
+    max-width: 1200px; /* 최대 너비를 1200px로 제한합니다 */
+    margin: 0 auto 50px auto; /* 가운데 정렬하고 아래쪽 여백을 50px로 설정합니다 */
+}
+
+/* 주차장 정보와 도보 정보 공통 스타일 */
+.parking-info,
+.walking-info {
+    background-color: #fff; /* 배경색을 흰색으로 설정합니다 */
+    padding: 30px; /* 안쪽 여백을 30px로 설정합니다 */
+    border-radius: 20px; /* 모서리를 둥글게 만듭니다 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* 그림자 효과를 줍니다 */
+    border: 2px solid #e9ecef; /* 연한 회색 테두리를 설정합니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초 전환 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 정보 박스에 마우스를 올렸을 때 스타일 */
+.parking-info:hover,
+.walking-info:hover {
+    transform: translateY(-5px); /* 박스를 위로 5px 이동시킵니다 */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* 그림자를 더 크게 만듭니다 */
+}
+
+/* 정보 섹션 제목 스타일 */
+.info-section-title {
+    font-size: 1.5rem; /* 글자 크기를 1.5rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    margin-bottom: 20px; /* 아래쪽 여백을 20px로 설정합니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 정보 강조 박스 스타일 */
+.info-highlight {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%); /* 그라데이션 배경을 설정합니다 */
+    padding: 20px; /* 안쪽 여백을 20px로 설정합니다 */
+    border-radius: 15px; /* 모서리를 둥글게 만듭니다 */
+    margin-bottom: 25px; /* 아래쪽 여백을 25px로 설정합니다 */
+    border-left: 4px solid #4a90e2; /* 왼쪽에 파란색 테두리를 설정합니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 강조 박스 내 문단 스타일 */
+.info-highlight p {
+    margin: 0; /* 여백을 제거합니다 */
+    font-size: 1.1rem; /* 글자 크기를 1.1rem으로 설정합니다 */
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 이용 방법 컨테이너 스타일 */
+.usage-method {
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 방법 제목 스타일 */
+.method-title {
+    font-size: 1.2rem; /* 글자 크기를 1.2rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    color: #4a90e2; /* 글자 색상을 파란색으로 설정합니다 */
+    margin-bottom: 20px; /* 아래쪽 여백을 20px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 방법 단계들 컨테이너 스타일 */
+.method-steps {
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    flex-direction: column; /* 세로 방향으로 배치합니다 */
+    gap: 15px; /* 단계 사이의 간격을 15px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 개별 단계 항목 스타일 */
+.step-item {
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    align-items: flex-start; /* 위쪽으로 정렬합니다 */
+    gap: 15px; /* 번호와 텍스트 사이 간격을 15px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 단계 번호 스타일 */
+.step-number {
+    background-color: #4a90e2; /* 배경색을 파란색으로 설정합니다 */
+    color: white; /* 글자 색상을 흰색으로 설정합니다 */
+    width: 28px; /* 너비를 28px로 설정합니다 */
+    height: 28px; /* 높이를 28px로 설정합니다 */
+    border-radius: 50%; /* 원형으로 만듭니다 */
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    align-items: center; /* 수직 가운데 정렬합니다 */
+    justify-content: center; /* 수평 가운데 정렬합니다 */
+    font-size: 0.9rem; /* 글자 크기를 0.9rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    flex-shrink: 0; /* 축소되지 않도록 설정합니다 */
+    margin-top: 2px; /* 위쪽 여백을 2px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 단계 설명 문단 스타일 */
+.step-item p {
+    margin: 0; /* 여백을 제거합니다 */
+    font-size: 1rem; /* 글자 크기를 1rem으로 설정합니다 */
+    line-height: 1.6; /* 줄 간격을 1.6배로 설정합니다 */
+    color: #555; /* 글자 색상을 중간 회색으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 주소 정보 컨테이너 스타일 - 2열 그리드로 배치합니다 */
+.address-info {
+    background-color: #fff; /* 배경색을 흰색으로 설정합니다 */
+    padding: 30px; /* 안쪽 여백을 30px로 설정합니다 */
+    border-radius: 20px; /* 모서리를 둥글게 만듭니다 */
+    margin-bottom: 40px; /* 아래쪽 여백을 40px로 설정합니다 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* 그림자 효과를 줍니다 */
+    max-width: 1200px; /* 최대 너비를 1200px로 위 섹션과 동일하게 설정합니다 */
+    margin-left: auto; /* 왼쪽 여백을 자동으로 설정합니다 */
+    margin-right: auto; /* 오른쪽 여백을 자동으로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+    display: grid; /* 그리드 레이아웃을 사용합니다 */
+    grid-template-columns: 1fr 1fr; /* 2개의 동일한 너비 열을 만듭니다 */
+    gap: 30px; /* 열 사이의 간격을 30px로 설정합니다 */
+    align-items: center; /* 세로 가운데 정렬합니다 */
+}
+
+/* 개별 주소 항목 스타일 */
+.address-item {
+    display: flex; /* 플렉스 레이아웃을 사용합니다 */
+    align-items: center; /* 수직 가운데 정렬합니다 */
+    gap: 10px; /* 요소 사이 간격을 10px로 설정합니다 */
+    margin-bottom: 0; /* 아래쪽 여백을 제거합니다 (그리드가 간격을 관리) */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 주소 아이콘 스타일 */
+.address-icon {
+    font-size: 1.2rem; /* 아이콘 크기를 1.2rem으로 설정합니다 */
+    width: 30px; /* 너비를 30px로 설정합니다 */
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+}
+
+/* 주소 라벨 스타일 */
+.address-label {
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    color: #4a90e2; /* 글자 색상을 파란색으로 설정합니다 */
+    min-width: 100px; /* 최소 너비를 100px로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 주소 텍스트 스타일 */
+.address-text {
+    color: #333; /* 글자 색상을 어두운 회색으로 설정합니다 */
+    font-size: 1rem; /* 글자 크기를 1rem으로 설정합니다 */
+    line-height: 1.5; /* 줄 간격을 1.5배로 설정합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+
+
+/* 지도 링크 컨테이너 스타일 */
+.map-link-container {
+    text-align: center; /* 텍스트를 가운데 정렬합니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 네이버 지도 버튼 스타일 */
+.naver-map-btn {
+    display: inline-flex; /* 인라인 플렉스 레이아웃을 사용합니다 */
+    align-items: center; /* 수직 가운데 정렬합니다 */
+    gap: 10px; /* 요소 사이 간격을 10px로 설정합니다 */
+    background: linear-gradient(135deg, #03c75a 0%, #029e4c 100%); /* 네이버 그린 그라데이션 배경을 설정합니다 */
+    color: white; /* 글자 색상을 흰색으로 설정합니다 */
+    text-decoration: none; /* 밑줄을 제거합니다 */
+    padding: 15px 30px; /* 안쪽 여백을 설정합니다 */
+    border-radius: 30px; /* 모서리를 둥글게 만듭니다 */
+    font-size: 1.1rem; /* 글자 크기를 1.1rem으로 설정합니다 */
+    font-weight: bold; /* 글자를 굵게 만듭니다 */
+    transition: all 0.3s ease; /* 모든 변화에 0.3초 전환 효과를 줍니다 */
+    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.3); /* 네이버 그린 그림자 효과를 줍니다 */
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 네이버 지도 버튼에 마우스를 올렸을 때 스타일 */
+.naver-map-btn:hover {
+    background: linear-gradient(135deg, #029e4c 0%, #02854a 100%); /* 더 진한 네이버 그린으로 변경합니다 */
+    transform: translateY(-3px); /* 버튼을 위로 3px 이동시킵니다 */
+    box-shadow: 0 10px 30px rgba(3, 199, 90, 0.4); /* 그림자를 더 크게 만듭니다 */
+}
+
+/* 지도 아이콘 스타일 */
+.map-icon {
+    font-size: 1.3rem; /* 아이콘 크기를 1.3rem으로 설정합니다 */
+}
+
+/* 지도 텍스트 스타일 */
+.map-text {
+    font-family: 'Nexon MapleStory', sans-serif; /* 넥슨폰트를 사용합니다 */
+}
+
+/* 외부 링크 아이콘 스타일 */
+.external-icon {
+    font-size: 1rem; /* 아이콘 크기를 1rem으로 설정합니다 */
+    opacity: 0.8; /* 투명도를 0.8로 설정합니다 */
+}
